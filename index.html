@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>A4文書サンプル</title>
+  <style>
+    /* 印刷時の設定 */
+    @page {
+      size: A4 portrait; /* A4縦向き（横向きにする場合は landscape） */
+      margin: 0; /* プリンタ標準のマージンをリセット */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: "Helvetica Neue", Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, sans-serif;
+    }
+
+    /* A4用紙のスタイル */
+    .page {
+      width: 210mm;
+      height: 297mm;
+      box-sizing: border-box;
+      padding: 20mm; /* 用紙内の余白（必要に応じて調整） */
+      margin: 20px auto;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* 改ページ設定 */
+      page-break-after: always;
+      break-after: page;
+    }
+
+    /* 印刷実行時のスタイリング調整 */
+    @media print {
+      body {
+        background: none;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+
+    /* 文書内の要素デザイン */
+    h1 {
+      font-size: 24pt;
+      border-bottom: 2px solid #333;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 11pt;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <h1>文書タイトル</h1>
+    <p>ここに入力したテキストがA4サイズの用紙内に配置されます。</p>
+    <p>HTMLとCSSを使うことで、デザインやレイアウトを自由にカスタマイズしたA4文書を作成できます。</p>
+  </div>
+
+</body>
+</html>
